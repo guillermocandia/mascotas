@@ -18,5 +18,12 @@ class Mascota(models.Model):
         null=False,
     )
 
+    votos = models.IntegerField(
+        default=0
+    )
+
     def __str__(self):
         return self.nickname
+
+    class Meta:
+        ordering = ['-votos']
